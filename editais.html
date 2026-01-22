@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editais</title>
+    <link rel="stylesheet" href="css/style-editais.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <img src="logo.jpeg" alt="Logo do Grupo REME" class="logo">
+            <div>
+                <h1>REME</h1>
+            </div>
+        </div>
+    </header>
+
+    
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Sobre Nós</a></li>         <!-- arquivo separado -->
+            <li><a href="quemsomos.html">Quem Somos</a></li>
+            <li><a href="projetos.html" >Projetos</a></li>
+            <li><a href="editais.html"style="color:#003366;">Editais</a></li>
+            <li><a href="oficinas.html">Oficinas</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN -->
+    <main class="content">
+
+        <h2 class="section-title">Editais</h2>
+
+        <!-- FILTRO -->
+        <div class="filter-box">
+            <label>Filtrar por ano:</label>
+            <select id="filter-year">
+                <option value="all">Todos</option>
+                <option value="2025">2025</option>
+                <option value="2024">2024</option>
+            </select>
+        </div>
+
+        <div class="editais-container">
+
+            <!-- 2025 -->
+            <div class="year-block">
+                <h3 class="year">2025</h3>
+                <ul class="edital-list">
+                    <li class="edital-card">
+                        <strong>Em breve</strong> — UFU  
+                        <a href="pdfs/artigo_2025.pdf" target="_blank">[PDF]</a>
+                    </li>
+
+                    <li class="edital-card">
+                        <strong>Em breve</strong> — UFU  
+                        <a href="pdfs/artigo_2025.pdf" target="_blank">[PDF]</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 2024 -->
+            <div class="year-block">
+                <h3 class="year">2024</h3>
+                <ul class="edital-list">
+                    <li class="edital-card">
+                        <strong>EDITAL DIRIME Nº 27/2024</strong> — UFU  
+                        <a href="pdfs/SEI_5977144_Edital_27.pdf" target="_blank">[PDF]</a>
+                    </li>
+
+                    <li class="edital-card">
+                        <strong>EDITAL DIRIME Nº 20/2024</strong> — UFU  
+                        <a href="pdfs/sei_5659221_edital_20.pdf" target="_blank">[PDF]</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2025 Grupo REME - UFU. Todos os direitos reservados.</p>
+    </footer>
+
+
+    <!-- SCRIPT DO FILTRO -->
+    <script>
+        document.getElementById('filter-year').addEventListener('change', function() {
+            const year = this.value;
+            const blocks = document.querySelectorAll('.year-block');
+
+            blocks.forEach(block => {
+                const blockYear = block.querySelector('.year').textContent.trim();
+                block.style.display = (year === "all" || year === blockYear) ? "block" : "none";
+            });
+        });
+    </script>
+
+</body>
+</html>
